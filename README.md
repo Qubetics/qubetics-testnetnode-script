@@ -10,7 +10,7 @@ System Requirements:
 - Network: Stable internet connection
 
 Clone this repo using:
-git clone '<https://github.com/CosmosCoder25/qubetics-tesnetnode-script.git>'
+git clone '<https://github.com/Qubetics/qubetics-testnetnode-script>'
 
 Setup the node:
 open a terminal window and run the following command :
