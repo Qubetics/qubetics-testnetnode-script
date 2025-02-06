@@ -19,7 +19,8 @@ VERSION=$(awk -F '=' '/^VERSION_ID/{print $2}' /etc/os-release | awk '{print $1}
 
 # Define the binary and installation paths
 BINARY="qubeticsd"
-INSTALL_PATH="/root/go/bin/"
+INSTALL_PATH="/usr/local/bin/"
+# INSTALL_PATH="/root/go/bin/"
 
 # Check if the OS is Ubuntu and the version is either 20.04 or 22.04
 if [ "$OS" == "Ubuntu" ] && [ "$VERSION" == "20.04" -o "$VERSION" == "22.04" ]; then
@@ -45,10 +46,13 @@ fi
 
 
 #==========================================================================================================================================
+echo "============================================================================================================"
+echo "Enter the Name for the node:"
+echo "============================================================================================================"
+read -r MONIKER
 KEYS="john"
 CHAINID="qubetics_9003-1"
 KEYRING="test"
-MONIKER="TitanNode"
 KEYALGO="eth_secp256k1"
 LOGLEVEL="info"
 
@@ -164,7 +168,7 @@ fi
 	sed -i 's/\["\*",\]/["*"]/g' "$CONFIG"
   
 # sed -i 's/enable = false/enable = true/g' "$CONFIG"
-# sed -i 's/rpc_servers \s*=\s* ""/rpc_servers = "https:\/\/qubeticschain_mainnet_rpc.chain.whenmoonwhenlambo.money:443,https:\/\/rpc-maverick.mavnode.io:443,https:\/\/rpc.kenseiqubetics.com:443,https:\/\/tendermint.qubeticsscan.com:443"/g' "$CONFIG"
+# sed -i 's/rpc_servers \s*=\s* ""/rpc_servers = ""/g' "$CONFIG"
 # sed -i 's/trust_hash \s*=\s* ""/trust_hash = "8223EF205275D355369D43391DA33A7AD7355932B50E50A7C092A0729084C739"/g' "$CONFIG"
 # sed -i 's/trust_height = 0/trust_height = 5063000/g' "$CONFIG"
 # sed -i 's/trust_period = "112h0m0s"/trust_period = "168h0m0s"/g' "$CONFIG"
