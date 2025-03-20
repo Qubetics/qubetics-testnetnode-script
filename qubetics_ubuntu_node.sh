@@ -6,7 +6,7 @@
 #  exit 1
 #fi
 current_path=$(pwd)
-#bash  $current_path/install-go.sh 
+bash  $current_path/install-go.sh 
 
 source $HOME/.bashrc
 ulimit -n 16384
